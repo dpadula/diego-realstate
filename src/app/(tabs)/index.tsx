@@ -10,9 +10,7 @@ export default function Index() {
         alignItems: 'center',
       }}
     >
-      <Text className='text-xl font-bold text-blue-500'>
-        Welcome to the ReState
-      </Text>
+      <Text className='text-xl font-bold my-10'>Welcome to the ReState</Text>
       <Link href='/signin'>Go to SignIn</Link>
       <Link href='/explore'>Go to Explore</Link>
       <Link href='/profile'>Go to Profile</Link>
