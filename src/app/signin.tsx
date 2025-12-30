@@ -1,3 +1,4 @@
+import icons from '@constants/icons';
 import images from '@constants/images';
 import React from 'react';
 import {
@@ -9,18 +10,20 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import icons from '../../constants/icons';
+import { login } from '../../lib/appwrite';
 
 const SignIn = () => {
   const handleLogin = async () => {
-    // const result = await login();
-    // if (result) {
-    //   refetch();
-    // } else {
-    //   Alert.alert('Error', 'Failed to login');
-    // }
-    console.log('Login button pressed');
+    const result = await login();
+    if (result) {
+      console.log('🚀 ~ handleLogin ~ result:', result);
+      // refetch();
+    } else {
+      // Alert.alert('Error', 'Failed to login');
+      console.log('Failed to login');
+    }
   };
+
   return (
     <SafeAreaView className='bg-white h-full'>
       <ScrollView
@@ -49,7 +52,7 @@ const SignIn = () => {
           </Text>
 
           <TouchableOpacity
-            onPress={handleLogin}
+            onPress={() => handleLogin()}
             className='bg-white shadow-md shadow-zinc-300 rounded-full w-full py-4 mt-5'
           >
             <View className='flex flex-row items-center justify-center'>
